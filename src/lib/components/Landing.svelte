@@ -34,7 +34,7 @@
 
 	let { onAnalyzeSuccess }: { onAnalyzeSuccess: (data: AnalysisResult) => void } = $props();
 
-	const VIDEO_ID = 'XVJdbLUcjls';
+	const VIDEO_ID = 'Tdpgoa6zpR4';
 	let videoPlaying = $state(false);
 
 	const faqs = [
