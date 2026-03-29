@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+
+  --color-yo-yellow: #D6FF34;
+  --color-surface-1: #1D1E19;
+  --color-surface-2: #262722;
+  --color-surface-3: #292A2D;
+
+  --color-card-blue: #7DA2FF;
+  --color-card-blue-text: #000434;
+  --color-card-mint: #5DFFC0;
+  --color-card-mint-text: #003F18;
+  --color-card-cyan: #71F6FF;
+  --color-card-cyan-text: #204150;
+  --color-card-lavender: #C1ADFF;
+  --color-card-lavender-text: #4D2050;
+
+  --color-background: #000000;
+  --color-foreground: #EDEDED;
+  --color-muted: rgba(255, 255, 255, 0.45);
+  --color-border: rgba(255, 255, 255, 0.1);
+
+  --color-danger: #FF4444;
+  --color-danger-foreground: #4D0000;
+  --color-concerning: #D6FF34;
+  --color-concerning-foreground: #2A3300;
+  --color-mild: #5DFFC0;
+  --color-mild-foreground: #003F18;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased font-sans overflow-x-hidden;
+    background-color: var(--color-background);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight uppercase;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.04) 0,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+  }
+
+  .bg-blob {
+    background: radial-gradient(circle, rgba(214, 255, 52, 0.15) 0%, rgba(0,0,0,0) 70%);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 40px -10px rgba(214, 255, 52, 0.3);
+  }
+
+  .shadow-pill {
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8);
+  }
+
+  .pulse-dot {
+    animation: pulse-dot-anim 2s infinite;
+  }
+}
+
+@keyframes pulse-dot-anim {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}

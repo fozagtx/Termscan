@@ -1,0 +1,26 @@
+# Dependencies
+node_modules
+
+# Build output
+.svelte-kit
+build
+dist
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.tsbuildinfo
+.cache/
+.local/
